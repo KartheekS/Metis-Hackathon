@@ -1,0 +1,35 @@
+<h1>IBM Watson Speech to Text </h1>
+<input #file type="file" multiple (change)="upload(file.files)" />
+<br />
+<p>{{forecast}}</p>
+
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+</style>
+
+<div *ngIf="!forecast">
+
+  <div *ngIf="!forecasts"><em>Loading...</em></div>
+
+</div>
+
+
+<!--<p>{{forecasts}}</p>-->
+<div *ngIf="forecasts">
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Speech to Text</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ forecasts }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
